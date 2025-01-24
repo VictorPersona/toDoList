@@ -10,8 +10,9 @@ function TaskContainer({ tasks, setTasks }) {
     const tId = callingTask.id
     const updatedTasks = tasks.map((task) => {
       if (task.id == tId) {
-        task.taskValue == callingTask.taskValue
+        return { ...task, taskValue: callingTask.taskValue }
       }
+      return task
     })
     setTasks(updatedTasks)
   }
